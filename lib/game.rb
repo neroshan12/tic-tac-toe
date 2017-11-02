@@ -10,9 +10,7 @@ class Game
   end
 
   def place_figure(x, y, figure)
-    xco = x - 1
-    yco = y - 1
-    board[yco][xco] = figure if board[yco][xco] == " "
+    board[y-1][x-1] = figure if board[y-1][x-1] == " "
     return "Sorry that space is already taken"
   end
 
