@@ -9,7 +9,6 @@ class Game
     @board
   end
 
-
   def place_figure(x, y, figure)
     xco = x - 1
     yco = y - 1
@@ -18,6 +17,12 @@ class Game
       board[yco][xco] = figure
     else
       return "Sorry that space is already taken"
+    end
+  end
+
+  def winner?
+    if @board == [[" ", " ", " "], ["X", "X", "X"], [" ", " ", " "]]
+      return "Well done, you've won!"
     end
   end
 end
