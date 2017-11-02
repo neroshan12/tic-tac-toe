@@ -25,7 +25,10 @@ class Game
     horizontal_wino = @board[0] == ["O", "O", "O"] || @board[1] == ["O", "O", "O"] || @board[2] == ["O", "O", "O"]
     vertical_winx = @board[0][0] && @board[1][0] && @board[2][0] == "X"
     vertical_wino = @board[0][0] && @board[1][0] && @board[2][0] == "O"
-    if vertical_wino || horizontal_winx || horizontal_wino || vertical_winx
+    diagonal_winxl =  @board[0][0] && @board[1][1] && @board[2][2] == "X"
+    diagonal_winxr =  @board[0][2] && @board[1][1] && @board[2][0] == "X"
+
+    if vertical_wino || horizontal_winx || horizontal_wino || vertical_winx || diagonal_winxl || diagonal_winxr
       return "Well done, you've won!"
     end
   end
