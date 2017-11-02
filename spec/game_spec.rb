@@ -13,11 +13,19 @@ describe Game do
                                 [" ", " ", " "]])
     end
   end
-    it 'allows you to place an X or O on the grid' do
+  describe 'allows the user to place on board'
+    it 'allows you to place an X on the board' do
       game = Game.new
-      game.place_figure(3, 2, "x")
+      game.place_figure(3, 2, "X")
       expect(game.board).to eq([[" ", " ", " "],
-                                [" ", " ", "x"],
+                                [" ", " ", "X"],
                                 [" ", " ", " "]])
     end
+    it 'allows you to place an O on the board' do
+      game = Game.new
+      game.place_figure(2, 2, "O")
+      expect(game.board).to eq([[" ", " ", " "],
+                                [" ", "O", " "],
+                                [" ", " ", " "]])
+    end  
 end
