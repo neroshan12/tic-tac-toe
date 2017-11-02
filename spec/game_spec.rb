@@ -33,13 +33,7 @@ describe Game do
       game.place_figure(2, 2, "X")
       expect(game.place_figure(2, 2, "O")).to eq("Sorry that space is already taken")
     end
-    it 'notifies the user if the game has been won horizontally' do
-      game = Game.new
-      game.place_figure(2, 2, "X")
-      game.place_figure(1, 2, "X")
-      game.place_figure(3, 2, "X")
-      expect(game.winner?).to eq("Well done, you've won!")
-    end
+
     it 'notifies the user if the game has been won horizontally (X)' do
       game = Game.new
       game.place_figure(2, 1, "X")
@@ -52,6 +46,7 @@ describe Game do
       game.place_figure(1, 1, "X")
       game.place_figure(1, 2, "X")
       game.place_figure(1, 3, "X")
+      expect(game.winner?).to eq("Well done, you've won!")
     end
     it 'notifies the user if the game has been won horizontally (O)' do
       game = Game.new
@@ -60,10 +55,12 @@ describe Game do
       game.place_figure(3, 1, "O")
       expect(game.winner?).to eq("Well done, you've won!")
     end
+
     it 'notifies the user if the game has been won vertically (O)' do
       game = Game.new
       game.place_figure(1, 1, "O")
       game.place_figure(1, 2, "O")
       game.place_figure(1, 3, "O")
+      expect(game.winner?).to eq("Well done, you've won!")
     end
 end

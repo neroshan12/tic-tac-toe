@@ -21,7 +21,11 @@ class Game
   end
 
   def winner?
-    if @board[0] || @board[1] || @board[2] == ["X", "X", "X"] || @board[0] || @board[1] || @board[2] == ["O", "O", "O"]
+    horizontal_winx = @board[0] == ["X", "X", "X"] || @board[1] == ["X", "X", "X"] || @board[2] == ["X", "X", "X"]
+    horizontal_wino = @board[0] == ["O", "O", "O"] || @board[1] == ["O", "O", "O"] || @board[2] == ["O", "O", "O"]
+    vertical_winx = @board[0][0] && @board[1][0] && @board[2][0] == "X"
+    vertical_wino = @board[0][0] && @board[1][0] && @board[2][0] == "O"
+    if vertical_wino || horizontal_winx || horizontal_wino || vertical_winx
       return "Well done, you've won!"
     end
   end
