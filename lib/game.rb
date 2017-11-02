@@ -14,6 +14,10 @@ class Game
     xco = x - 1
     yco = y - 1
 
-    board[yco][xco] = figure
+    if board[yco][xco] == " "
+      board[yco][xco] = figure
+    else
+      return "Sorry that space is already taken"
+    end
   end
 end

@@ -27,5 +27,10 @@ describe Game do
       expect(game.board).to eq([[" ", " ", " "],
                                 [" ", "O", " "],
                                 [" ", " ", " "]])
-    end  
+    end
+    it 'does not allow you to place on a taken space' do
+      game = Game.new
+      game.place_figure(2, 2, "X")
+      expect(game.place_figure(2, 2, "O")).to eq("Sorry that space is already taken")
+    end
 end
