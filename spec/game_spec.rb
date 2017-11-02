@@ -76,5 +76,19 @@ describe Game do
       game.place_figure(1, 3, "X")
       expect(game.winner?).to eq("Well done, you've won!")
     end
+    it 'notifies the user if the game has been won diagonally (L-R)(O)' do
+      game = Game.new
+      game.place_figure(1, 1, "O")
+      game.place_figure(2, 2, "O")
+      game.place_figure(3, 3, "O")
+      expect(game.winner?).to eq("Well done, you've won!")
+    end
+    it 'notifies the user if the game has been won diagonally (R-L)(O)' do
+      game = Game.new
+      game.place_figure(3, 1, "O")
+      game.place_figure(2, 2, "O")
+      game.place_figure(1, 3, "O")
+      expect(game.winner?).to eq("Well done, you've won!")
+    end
 
 end
