@@ -1,12 +1,10 @@
 class Game
+  attr_reader :board
+  
   def initialize
     @board = [[" ", " ", " "],
               [" ", " ", " "],
               [" ", " ", " "]]
-  end
-
-  def board
-    @board
   end
 
   def place_figure(x, y, figure)
