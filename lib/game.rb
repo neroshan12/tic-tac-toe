@@ -21,7 +21,7 @@ class Game
   end
 
   def winner?
-    if @board[0] || @board[1] || @board[2] == ["X", "X", "X"]
+    if @board[0] || @board[1] || @board[2] == ["X", "X", "X"] || @board[0] || @board[1] || @board[2] == ["O", "O", "O"]
       return "Well done, you've won!"
     end
   end
