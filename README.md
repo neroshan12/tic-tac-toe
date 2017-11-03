@@ -1,4 +1,4 @@
-# Project Title
+# Tic-tac-toe tech test
 
 The aim of this project is to build a tic-tac-toe game in Ruby.
 
